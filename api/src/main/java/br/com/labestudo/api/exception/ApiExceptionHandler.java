@@ -4,7 +4,6 @@ import br.com.labestudo.api.model.dto.ErrorDto;
 import br.com.labestudo.api.model.dto.ErrorsDto;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpHeaders;

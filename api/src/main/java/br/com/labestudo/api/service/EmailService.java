@@ -2,13 +2,15 @@ package br.com.labestudo.api.service;
 
 import br.com.labestudo.api.model.dto.EmailDto;
 import freemarker.template.Configuration;
-import freemarker.template.Template;
+import freemarker.template.TemplateException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+
+import java.io.IOException;
 
 
 @Service
@@ -30,13 +32,13 @@ public class EmailService implements EmailSender {
             mimeMessageHelper.setSubject(emailDto.getSubject());
             mimeMessageHelper.setText(corpo, true);
             javaMailSender.send(mimeMessage);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
 
         }
     }
 
-    public String processarModelo(EmailDto message) throws Exception {
-        Template template = freemarkerConfiguration.getTemplate(message.getTemplate());
+    public String processarModelo(EmailDto message) throws IOException, TemplateException {
+        var template = freemarkerConfiguration.getTemplate(message.getTemplate());
         return FreeMarkerTemplateUtils.processTemplateIntoString(template, message.getValues());
     }
 }

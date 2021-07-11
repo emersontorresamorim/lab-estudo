@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class PassFlowVerifyServiceUT {
+class PassFlowVerifyServiceTest {
 
     private final PassFlowVerifyService passFlowVerifyService = new PassFlowVerifyService();
 

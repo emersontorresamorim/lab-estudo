@@ -40,6 +40,11 @@ public class SelfRegisterFixture {
                 .build();
     }
 
+    public static UserDto invalidNameUserDto() {
+        return UserDto.builder().email("vvsdfdsfds")
+                .build();
+    }
+
     public static Parameter validParameter() {
         return new Parameter();
     }

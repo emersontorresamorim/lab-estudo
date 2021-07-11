@@ -2,7 +2,9 @@ package br.com.labestudo.api.model.validation;
 
 public interface ValidationGroup {
 
-    interface Insert {}
+    interface Default {}
 
-    interface Update {}
+    interface Insert extends Default {}
+
+    interface Update extends Default {}
 }
